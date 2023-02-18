@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&display=swap');
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    /*Fonts*/
+    --NORMAL-FONT : 'Lexend Deca' , 'sans-serif';
+    --SPECIAL-FONT : 'Inter' ,'sans-serif';
+
+    /* colors */
+    --BG-COLOR :  hsl(233, 47%, 7%);
+    --CARD-BG-COLOR : hsl(244, 38%, 16%);
+    --ACCENT-COLOR : hsl(277, 64%, 61%);
+
+    --HEADING-COLOR : WHITE;
+    --P-COLOR: hsla(0, 0%, 100%, 0.75);
+    --STATS-HEADING-COLOR : hsla(0, 0%, 100%, 0.6);
+
+    --BORDER-RADIUS: 1rem;
+    --PADDING : 1rem;
+    --MULTIPLIER : 0.73394495412;
+
+
+
+}
+
+body {
+    background-color: var(--BG-COLOR);
+    font-family: var(--NORMAL-FONT);
+    text-align: center;
+}
+.card {
+    background-color: var(--CARD-BG-COLOR);
+    margin: 10% auto;
+    width: 90vw;
+    border-radius: var(--BORDER-RADIUS);
+    height: calc(width * var(--MULTIPLIER));
+
+    
+}
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: var(--BORDER-RADIUS);
+    border-top-right-radius: var(--BORDER-RADIUS);
+    
+    
+   
+   
+}
+.layer {
+    position: absolute;
+     top: 0%;
+    width: 90vw;
+    height: calc(90vw * var(--MULTIPLIER) ) ;
+    margin: 10% auto;
+    background-color: var(--ACCENT-COLOR);
+    opacity: 50%;
+    border-top-left-radius: var(--BORDER-RADIUS);
+    border-top-right-radius: var(--BORDER-RADIUS);
+    
+    
+}
+.card h1 , .card .numbers {
+    color: var(--HEADING-COLOR);
+    font-family: var(--SPECIAL-FONT);
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding: var(--PADDING);
+}
+.card .numbers {
+    padding-bottom: 0px;
+}
+.card .info {
+    color: var(--P-COLOR);
+}
+.card .stats_headings  {
+    color: var(--STATS-HEADING-COLOR);
+    
+}
+.insights {
+    color: var(--ACCENT-COLOR);
+}
+
+@media screen and (min-width:1300px) {
+    :root {
+        --MULTIPLIER : 0.82592592592;
+    }
+    .card {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 80vw;
+        
+
+
+    }
+    .card img {
+        width: 40vw;
+        border-bottom-right-radius: var(--BORDER-RADIUS);
+        height: calc(40vw * var(--MULTIPLIER));
+        border-top-left-radius: 0rem;
+    }
+    .layer {
+        width: 40vw;
+        
+        height: calc(40vw * var(--MULTIPLIER));
+        border-bottom-right-radius: var(--BORDER-RADIUS);
+        
+    }
+    .card .stats {
+       display: grid;
+       grid-template-columns: repeat(3 , 1fr);
+        margin-top: 2rem;
+    }
+    .card .stats p:nth-child(odd) {
+        order : -1;
+    }
+}
